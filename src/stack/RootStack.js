@@ -7,7 +7,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 import LoginComponent from '../component/LoginComponent';
 // import ContactComponent from '../component/ContactComponent';
-// import MessagesComponent from '../component/MessagesComponent';
+import MessagesComponent from '../component/MessagesComponent';
 // import NotificationComponent from '../component/NotificationComponent';
 
 class RootStack extends Component {
@@ -72,7 +72,7 @@ const Stacknavigator = createStackNavigator({
         }
     },
     Home: {
-        screen: LoginComponent,
+        screen: MessagesComponent,
         navigationOptions: {
             headerShown: false
         }
