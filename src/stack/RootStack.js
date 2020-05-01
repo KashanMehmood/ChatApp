@@ -10,6 +10,8 @@ import ContactComponent from '../component/ContactComponent';
 import MessagesComponent from '../component/MessagesComponent';
 import NotificationComponent from '../component/NotificationComponent';
 
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+
 class RootStack extends Component {
     render() {
         return (
@@ -30,26 +32,38 @@ const styles = StyleSheet.create({
 
 const Tabnavigator = createMaterialBottomTabNavigator({
 
-    Messages: { 
-        screen: MessagesComponent, 
+    Messages: {
+        screen: MessagesComponent,
         navigationOptions: {
-            tabBarLabel: 'Messages'        
+            tabBarLabel: 'Messages',
+            // tabBarLabel: <Text style={{ fontWeight:'bold' }}> Messages </Text>,
+            tabBarIcon: ({ tintColor, focused }) => <MaterialIcons name="message" size={focused ? 25 : 20} color={focused ? tintColor : 'gray'} />,
         }
     },
 
-    Contact: { 
-        screen: ContactComponent, 
+    Contact: {
+        screen: ContactComponent,
         navigationOptions: {
-            tabBarLabel: 'Contact'        
+            tabBarLabel: 'Contact',
+            // tabBarLabel: <Text style={{ fontWeight:'bold' }}> Contact </Text>,
+            tabBarIcon: ({ tintColor, focused }) => <MaterialIcons name="contacts" size={focused ? 25 : 20} color={focused ? tintColor : 'gray'} />,
         }
     },
 
-    Notification: { 
-        screen: NotificationComponent, 
+    Notification: {
+        screen: NotificationComponent,
         navigationOptions: {
-            tabBarLabel: 'Notification'        
+            tabBarLabel: 'Notification',
+            // tabBarLabel: <Text style={{ fontWeight:'bold' }}> Notification </Text>,
+            tabBarIcon: ({ tintColor, focused }) => <MaterialIcons name="notifications" size={focused ? 25 : 20} color={focused ? tintColor : 'gray'} />,
         }
     },
+}, {
+    initialRouteName: 'Messages',
+    activeColor: 'green',
+    inactiveColor: 'gray',
+    barStyle: { backgroundColor: 'white' },
+    // shifting: true
 });
 
 
@@ -70,6 +84,3 @@ const Stacknavigator = createStackNavigator({
 });
 
 export default createAppContainer(Stacknavigator);
-
-
-// export default RootStack;
