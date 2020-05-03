@@ -52,6 +52,7 @@ class LoginComponent extends Component {
                     <View style={styles.InputContainer}>
 
                         <TouchableOpacity
+                            activeOpacity={0.7}
                             style={styles.submitButton}
                             onPress={() => this.props.navigation.navigate('Home')}
                         >
