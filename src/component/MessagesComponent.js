@@ -213,6 +213,13 @@ class MessagesComponent extends Component {
                 style={styles.itemContainer}
                 activeOpacity={0.4}
                 onPress={() => this.props.navigation.navigate('ChatScreen')}
+
+                // onPress={() => {
+                //     this.props.navigation.navigate('ChatScreen', {
+                //         itemId: 86,
+                //         otherParam: item.user_name,
+                //     });
+                // }}
             >
 
                 <Image
