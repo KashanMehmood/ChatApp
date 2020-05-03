@@ -273,12 +273,8 @@ class MessagesComponent extends Component {
                         <View style={{ flexDirection: 'row' }} >
 
                             {item.readed ? null :
-                                <View style={styles.numReaded}>
-                                    <Text style={{
-                                        color: 'white',
-                                        fontWeight: 'bold',
-                                        fontSize: 12
-                                    }} >4</Text>
+                                <View>
+                                    <Text  style={styles.numReaded}>4</Text>
                                 </View>}
 
                             {item.item_mute ?
@@ -485,13 +481,22 @@ const styles = StyleSheet.create({
 
         height: 20,
         backgroundColor: '#30ac40',
-        padding: 5,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 50,
         marginTop: 3,
+        paddingTop: 1,
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 12,
+        paddingHorizontal: 5,
 
-        // paddingHorizontal: 5,
+        // paddingBottom: 2,
+        // alignItems: 'center',
+        // justifyContent: 'center',
+        // paddingVertical: 5,
+        // padding: 5,
+        // paddingLeft: 5,
     },
 
     icon: {
