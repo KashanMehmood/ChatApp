@@ -10,6 +10,8 @@ import ContactComponent from '../component/ContactComponent';
 import MessagesComponent from '../component/MessagesComponent';
 import NotificationComponent from '../component/NotificationComponent';
 
+import ChatComponent from '../component/ChatComponent';
+
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 class RootStack extends Component {
@@ -77,6 +79,13 @@ const Stacknavigator = createStackNavigator({
     
     Home: {
         screen: Tabnavigator,
+        navigationOptions: {
+            headerShown: false
+        }
+    },
+
+    ChatScreen: {
+        screen: ChatComponent,
         navigationOptions: {
             headerShown: false
         }
