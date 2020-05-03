@@ -209,86 +209,92 @@ class MessagesComponent extends Component {
 
     renderItem = ({ item }) => {
         return (
-            <TouchableOpacity
+            <TouchableHighlight
+                underlayColor="#f9f9f9"
+                // underlayColor="#e0e0e0"
                 style={styles.itemContainer}
                 activeOpacity={0.4}
                 onPress={() => this.props.navigation.navigate('ChatScreen')}
 
-                // onPress={() => {
-                //     this.props.navigation.navigate('ChatScreen', {
-                //         itemId: 86,
-                //         otherParam: item.user_name,
-                //     });
-                // }}
+            // onPress={() => {
+            //     this.props.navigation.navigate('ChatScreen', {
+            //         itemId: 86,
+            //         otherParam: item.user_name,
+            //     });
+            // }}
             >
 
-                <Image
-                    source={item.user_avatar}
-                    style={{ height: 50, width: 50 }}
-                    resizeMode="stretch"
-                />
-                <View style={styles.itemMessage}>
-                    <View style={{
-                        flex: 1,
+                <View style={styles.TouchableHighlightContainer}
+                >
 
-                        // backgroundColor: 'red'
-                    }}>
+                    <Image
+                        source={item.user_avatar}
+                        style={{ height: 50, width: 50 }}
+                        resizeMode="stretch"
+                    />
+                    <View style={styles.itemMessage}>
+                        <View style={{
+                            flex: 1,
 
-                        <Text
-                            numberOfLines={1}
-                            style={{
-                                color: 'black',
-                                fontWeight: item.readed ? null : 'bold',
+                            // backgroundColor: 'red'
+                        }}>
 
-                                // backgroundColor: 'green',
-                            }}
-                        >
-                            {item.user_name}
-                        </Text>
-                        <Text
-                            numberOfLines={1}
-                            style={{
-                                color: 'black',
-                                fontWeight: item.readed ? null : 'bold',
-                            }}
-                        >
-                            {item.messages}
-                        </Text>
-                    </View>
-                    <View style={{ alignItems: 'flex-end' }}>
-                        <Text
-                            style={{
-                                color: 'black',
-                                fontSize: 12,
-                                fontWeight: item.readed ? null : 'bold',
-                                textAlign: 'right'
-                                
-                                // backgroundColor: 'lightseagreen',
-                                // fontStyle: 'italic',
-                            }}
-                        >
-                            {item.created_at}
-                        </Text>
+                            <Text
+                                numberOfLines={1}
+                                style={{
+                                    color: 'black',
+                                    fontWeight: item.readed ? null : 'bold',
 
-                        <View style={{ flexDirection: 'row' }} >
+                                    // backgroundColor: 'green',
+                                }}
+                            >
+                                {item.user_name}
+                            </Text>
+                            <Text
+                                numberOfLines={1}
+                                style={{
+                                    color: 'black',
+                                    fontWeight: item.readed ? null : 'bold',
+                                }}
+                            >
+                                {item.messages}
+                            </Text>
+                        </View>
+                        <View style={{ alignItems: 'flex-end' }}>
+                            <Text
+                                style={{
+                                    color: 'black',
+                                    fontSize: 12,
+                                    fontWeight: item.readed ? null : 'bold',
+                                    textAlign: 'right'
 
-                            {item.readed ? null :
-                                <View>
-                                    <Text  style={styles.numReaded}>4</Text>
-                                </View>}
+                                    // backgroundColor: 'lightseagreen',
+                                    // fontStyle: 'italic',
+                                }}
+                            >
+                                {item.created_at}
+                            </Text>
 
-                            {item.item_mute ?
-                                <View style={styles.icon}>
-                                    <MaterialCommunityIcons style={{ justifyContent: 'center', alignItems: 'center' }} name="volume-variant-off" size={20} color='gray' />
-                                </View>
-                                : null}
+                            <View style={{ flexDirection: 'row' }} >
+
+                                {item.readed ? null :
+                                    <View>
+                                        <Text style={styles.numReaded}>4</Text>
+                                    </View>}
+
+                                {item.item_mute ?
+                                    <View style={styles.icon}>
+                                        <MaterialCommunityIcons style={{ justifyContent: 'center', alignItems: 'center' }} name="volume-variant-off" size={20} color='gray' />
+                                    </View>
+                                    : null}
+
+                            </View>
 
                         </View>
 
                     </View>
-
                 </View>
-            </TouchableOpacity>
+            </TouchableHighlight>
         )
     }
 
@@ -419,6 +425,17 @@ const styles = StyleSheet.create({
         height: 80,
         width: 80,
     },
+
+    TouchableHighlightContainer: {
+
+        flex: 1,
+        flexDirection: 'row',
+        // paddingLeft: 15,
+        // borderBottomWidth: 1,
+        // borderBottomColor: '#f2f2f2',
+        // backgroundColor: 'lightblue',
+    },
+
 
     user: {
 
