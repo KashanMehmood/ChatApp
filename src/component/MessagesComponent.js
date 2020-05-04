@@ -8,12 +8,14 @@ import {
     TouchableOpacity,
     TouchableHighlight,
     FlatList,
+    TextInput
 } from 'react-native';
 
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 class MessagesComponent extends Component {
 
@@ -343,6 +345,28 @@ class MessagesComponent extends Component {
                     </ImageBackground>
                 </View>
 
+                <View style={styles.selection}>
+                    <View style={styles.searchBar}>
+                        <Ionicons style={{
+                            alignItems: 'flex-start'
+                            // paddingLeft: 5,
+                            // backgroundColor:'green',
+                        }} name="ios-search" color='gray' size={20} />
+                        <TextInput
+                            style={styles.searchTextInput}
+                            placeholder="Search"
+                        />
+                        <TouchableOpacity style={{
+                            paddingLeft: 5,
+                            alignItems: 'flex-end'
+                            // paddingRight: 7,
+                            // backgroundColor:'green',
+                        }} activeOpacity={0.5}>
+                            <Ionicons name="ios-close" color='gray' size={25} />
+                        </TouchableOpacity>
+                    </View>
+                </View>
+
                 <View style={styles.footer}>
 
                     <FlatList
@@ -527,6 +551,47 @@ const styles = StyleSheet.create({
 
         // backgroundColor: 'green',
         // backgroundColor: '#25D366',
+    },
+
+    selection: {
+
+        alignItems: 'center',
+        borderBottomWidth: 1,
+        borderBottomColor: '#f2f2f2',
+        width: '100%',
+
+        // flexDirection:'row',
+        // backgroundColor:'red'
+        // height: 70,
+    },
+
+    searchBar: {
+
+        marginTop: 15,
+        marginBottom: 15,
+        width: '90%',
+        height: 40,
+        flexDirection: 'row',
+        backgroundColor: '#f2f2f2',
+        borderRadius: 5,
+        alignItems: 'center',
+        paddingLeft: 15,
+        paddingRight: 20
+
+        // paddingHorizontal: 17
+        // backgroundColor:'green',
+    },
+
+    searchTextInput: {
+
+        flex: 1,
+        alignItems: 'center',
+        paddingLeft: 10,
+
+        // width: '95%',
+        // paddingRight: 20,
+        // paddingRight:7,
+        // backgroundColor:'red'
     },
 
 });
