@@ -305,6 +305,7 @@ const styles = StyleSheet.create({
 
     contactText: {
 
+        textAlign:'center',
         color: 'white',
         fontSize: 25,
         fontWeight: 'bold'
@@ -313,9 +314,10 @@ const styles = StyleSheet.create({
     addContainer: {
 
         justifyContent: 'center',
-        alignItems: 'center',
+        // alignItems: 'center',
+        alignItems: 'flex-start',
         height: 75,
-        width: 100,
+        width: 50,
         // backgroundColor: 'green',
     },
 
