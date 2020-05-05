@@ -143,15 +143,24 @@ class ContactComponent extends Component {
             >
 
                 <View style={styles.TouchableHighlightContainer}>
+                    <View style={{
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
 
-                    <Image
-                        source={item.user_avatar}
-                        style={{ height: 50, width: 50 }}
-                        resizeMode="stretch"
-                    />
+                        <Image
+                            source={item.user_avatar}
+                            style={{
+                                height: 50, width: 50,
+                            }}
+                            resizeMode="stretch"
+                        />
+                    </View>
                     <View style={styles.itemMessage}>
                         <View style={{
                             flex: 1,
+                            justifyContent: 'center',
+                            alignItems: 'flex-start',
                             // backgroundColor: 'red'
                         }}>
 
@@ -160,22 +169,25 @@ class ContactComponent extends Component {
                                 style={{
                                     color: 'black',
                                     fontWeight: 'bold',
+                                    paddingTop: 10,
                                     // backgroundColor: 'green',
                                 }}
                             >
                                 {item.user_name}
                             </Text>
-                            
+
                             <Text
                                 numberOfLines={1}
                                 style={{
                                     color: 'black',
+                                    paddingBottom: 10,
+                                    
                                 }}
                             >
                                 {item.user_phonenumber}
                             </Text>
                         </View>
-                        
+
                         <View style={{
                             flex: 0.19,
                             justifyContent: 'center',
@@ -183,7 +195,7 @@ class ContactComponent extends Component {
                             // backgroundColor: 'red',
                         }}>
                             <TouchableOpacity
-                             activeOpacity={0.35}
+                                activeOpacity={0.35}
                             >
                                 <MaterialIcons name="call" size={24} color='green' />
                             </TouchableOpacity>
@@ -367,7 +379,7 @@ const styles = StyleSheet.create({
 
         flexDirection: 'row',
         paddingHorizontal: 20,
-        paddingVertical: 10,
+        // paddingVertical: 10,
 
         // paddingLeft: 20,
         // backgroundColor: 'lightblue',
