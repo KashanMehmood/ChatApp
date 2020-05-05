@@ -213,7 +213,7 @@ class MessagesComponent extends Component {
         return (
             <TouchableHighlight
                 underlayColor="#f9f9f9"
-                // underlayColor="#e0e0e0"
+                // underlayColor="#f2f2f2"
                 style={styles.itemContainer}
                 activeOpacity={0.4}
                 onPress={() => this.props.navigation.navigate('ChatScreen')}
@@ -228,16 +228,26 @@ class MessagesComponent extends Component {
 
                 <View style={styles.TouchableHighlightContainer}
                 >
+                    <View style={{
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
 
-                    <Image
-                        source={item.user_avatar}
-                        style={{ height: 50, width: 50 }}
-                        resizeMode="stretch"
-                    />
+                        <Image
+                            source={item.user_avatar}
+                            style={{
+                                height: 50, width: 50,
+                            }}
+                            resizeMode="stretch"
+                        />
+                    </View>
+
                     <View style={styles.itemMessage}>
                         <View style={{
                             flex: 1,
-
+                            justifyContent: 'center',
+                            alignItems: 'flex-start',
+                            // height:  '10%',
                             // backgroundColor: 'red'
                         }}>
 
@@ -246,7 +256,7 @@ class MessagesComponent extends Component {
                                 style={{
                                     color: 'black',
                                     fontWeight: item.readed ? null : 'bold',
-
+                                    paddingTop: 10,
                                     // backgroundColor: 'green',
                                 }}
                             >
@@ -256,13 +266,20 @@ class MessagesComponent extends Component {
                                 numberOfLines={1}
                                 style={{
                                     color: 'black',
+                                    paddingBottom: 10,
                                     fontWeight: item.readed ? null : 'bold',
+
+                                    //  paddingVertical: 10,
                                 }}
                             >
                                 {item.messages}
                             </Text>
                         </View>
-                        <View style={{ alignItems: 'flex-end' }}>
+                        <View style={{
+                            alignItems: 'flex-end',
+                            justifyContent: 'center',
+
+                        }}>
                             <Text
                                 style={{
                                     color: 'black',
@@ -501,7 +518,7 @@ const styles = StyleSheet.create({
 
         flexDirection: 'row',
         paddingHorizontal: 20,
-        paddingVertical: 10
+        // paddingVertical: 10
         // paddingLeft: 20,
 
         // backgroundColor: 'lightblue',
@@ -511,7 +528,8 @@ const styles = StyleSheet.create({
 
         flex: 1,
         flexDirection: 'row',
-        paddingLeft: 15,
+        // paddingLeft: 15,
+        marginLeft: 10,
         borderBottomWidth: 1,
         borderBottomColor: '#f2f2f2',
 
