@@ -298,7 +298,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'flex-start',
-        marginLeft:30,
+        marginLeft: 30,
         height: 75,
 
         // backgroundColor: 'green',
@@ -306,7 +306,7 @@ const styles = StyleSheet.create({
 
     contactText: {
 
-        textAlign:'center',
+        textAlign: 'center',
         color: 'white',
         fontSize: 25,
         fontWeight: 'bold'
