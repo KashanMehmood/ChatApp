@@ -186,7 +186,7 @@ class ContactComponent extends Component {
                                 style={{
                                     color: 'black',
                                     paddingBottom: 10,
-                                    
+
                                 }}
                             >
                                 {item.user_phonenumber}
@@ -311,6 +311,9 @@ const styles = StyleSheet.create({
 
         height: 75,
         flexDirection: 'row',
+
+        borderBottomRightRadius: 40,
+        borderBottomLeftRadius: 40
 
         // backgroundColor: 'lightblue',
         // justifyContent: 'center',

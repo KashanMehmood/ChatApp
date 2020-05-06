@@ -297,8 +297,8 @@ const styles = StyleSheet.create({
         height: 75,
         flexDirection: 'row',
 
-        // borderBottomRightRadius:10,
-        // borderBottomLeftRadius:45
+        borderBottomRightRadius: 40,
+        borderBottomLeftRadius: 40,
 
         // backgroundColor: 'lightblue',
         // justifyContent: 'center',
