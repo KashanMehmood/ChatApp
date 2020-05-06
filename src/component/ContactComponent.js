@@ -7,13 +7,18 @@ import {
     TouchableOpacity,
     TouchableHighlight,
     FlatList,
-    TextInput
+    TextInput,
+    SafeAreaView, ScrollView
 } from 'react-native';
 
 import LinearGradient from 'react-native-linear-gradient';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+
+// for avoid flatlist warning
+import { YellowBox } from 'react-native';
+YellowBox.ignoreWarnings(['VirtualizedLists should never be nested'])
 
 class ContactComponent extends Component {
 
@@ -235,33 +240,48 @@ class ContactComponent extends Component {
                     </View>
                 </LinearGradient>
 
-                <View style={styles.selection}>
-                    <View style={styles.searchBar}>
+                <SafeAreaView style={styles.container}>
+                    <ScrollView style={styles.scrollView}>
 
-                        <Ionicons style={{
-                            alignItems: 'flex-start'
-                            // paddingLeft: 5,
-                            // backgroundColor:'green',
-                        }} name="ios-search" color='gray' size={20} />
+                        <View style={styles.selection}>
+                            <View style={styles.searchBar}>
 
-                        <TextInput
-                            style={styles.searchTextInput}
-                            placeholder="Search"
-                        />
+                                <Ionicons style={{
+                                    alignItems: 'flex-start'
+                                    // paddingLeft: 5,
+                                    // backgroundColor:'green',
+                                }} name="ios-search" color='gray' size={20} />
 
-                        <TouchableOpacity style={{
-                            paddingLeft: 5,
-                            alignItems: 'flex-end'
-                            // paddingRight: 7,
-                            // backgroundColor:'green',
-                        }} activeOpacity={0.5}>
+                                <TextInput
+                                    style={styles.searchTextInput}
+                                    placeholder="Search"
+                                />
 
-                            <Ionicons name="ios-close" color='gray' size={25} />
-                        </TouchableOpacity>
-                    </View>
-                </View>
+                                <TouchableOpacity style={{
+                                    paddingLeft: 5,
+                                    alignItems: 'flex-end'
+                                    // paddingRight: 7,
+                                    // backgroundColor:'green',
+                                }} activeOpacity={0.5}>
 
-                <View style={styles.footer}>
+                                    <Ionicons name="ios-close" color='gray' size={25} />
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+
+                        <View style={styles.footer}>
+                            <FlatList
+                                data={this.state.data_contact}
+                                renderItem={this.renderItem}
+                                keyExtractor={(item) => item.id}
+                                ItemSeparatorComponent={this.ItemSeparatorComponent}
+                            />
+                        </View>
+
+                    </ScrollView>
+                </SafeAreaView>
+
+                {/* <View style={styles.footer}>
 
                     <FlatList
                         data={this.state.data_contact}
@@ -269,7 +289,8 @@ class ContactComponent extends Component {
                         keyExtractor={(item) => item.id}
                         ItemSeparatorComponent={this.ItemSeparatorComponent}
                     />
-                </View>
+                </View> */}
+
             </View>
         );
     }
