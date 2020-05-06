@@ -8,7 +8,8 @@ import {
     TouchableOpacity,
     TouchableHighlight,
     FlatList,
-    TextInput
+    TextInput,
+    SafeAreaView, ScrollView
 } from 'react-native';
 
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -16,6 +17,10 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+
+// for avoid flatlist warning
+import { YellowBox } from 'react-native';
+YellowBox.ignoreWarnings(['VirtualizedLists should never be nested'])
 
 class MessagesComponent extends Component {
 
@@ -362,7 +367,47 @@ class MessagesComponent extends Component {
                     </ImageBackground>
                 </View>
 
-                <View style={styles.selection}>
+                <SafeAreaView style={styles.scrollViewContainer}>
+                    <ScrollView style={styles.scrollView}>
+
+                        <View style={styles.selection}>
+                            <View style={styles.searchBar}>
+                                <Ionicons style={{
+                                    alignItems: 'flex-start'
+                                    // paddingLeft: 5,
+                                    // backgroundColor:'green',
+                                }} name="ios-search" color='gray' size={20} />
+                                <TextInput
+                                    style={styles.searchTextInput}
+                                    placeholder="Search"
+                                />
+                                <TouchableOpacity style={{
+                                    paddingLeft: 5,
+                                    alignItems: 'flex-end'
+                                    // paddingRight: 7,
+                                    // backgroundColor:'green',
+                                }} activeOpacity={0.5}>
+                                    <Ionicons name="ios-close" color='gray' size={25} />
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+
+                        <View style={styles.footer}>
+
+                            <FlatList
+                                data={this.state.data_messages}
+                                renderItem={this.renderItem}
+                                keyExtractor={(item) => item.id}
+                                ItemSeparatorComponent={this.ItemSeparatorComponent}
+                            />
+
+                        </View>
+
+                    </ScrollView>
+                </SafeAreaView>
+
+
+                {/* <View style={styles.selection}>
                     <View style={styles.searchBar}>
                         <Ionicons style={{
                             alignItems: 'flex-start'
@@ -382,9 +427,9 @@ class MessagesComponent extends Component {
                             <Ionicons name="ios-close" color='gray' size={25} />
                         </TouchableOpacity>
                     </View>
-                </View>
+                </View> */}
 
-                <View style={styles.footer}>
+                {/* <View style={styles.footer}>
 
                     <FlatList
                         data={this.state.data_messages}
@@ -393,7 +438,7 @@ class MessagesComponent extends Component {
                         ItemSeparatorComponent={this.ItemSeparatorComponent}
                     />
 
-                </View>
+                </View> */}
             </View>
         );
     }
@@ -416,6 +461,12 @@ const styles = StyleSheet.create({
 
         // backgroundColor: 'red',
         // backgroundColor: 'lightblue'
+    },
+
+    scrollViewContainer: {
+        flex: 1,
+        width: '100%',
+        backgroundColor: 'white',
     },
 
     footer: {
@@ -577,6 +628,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: '#f2f2f2',
         width: '100%',
+        marginBottom:10,
 
         // flexDirection:'row',
         // backgroundColor:'red'
