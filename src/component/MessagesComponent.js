@@ -303,7 +303,7 @@ class MessagesComponent extends Component {
 
                                 {item.readed ? null :
                                     <View>
-                                        <Text style={styles.numReaded}>4</Text>
+                                        <Text style={styles.numReaded}>5</Text>
                                     </View>}
 
                                 {item.item_mute ?
@@ -599,7 +599,7 @@ const styles = StyleSheet.create({
         color: 'white',
         fontWeight: 'bold',
         fontSize: 12,
-        paddingHorizontal: 5,
+        paddingHorizontal: 7,
 
         // paddingBottom: 2,
         // alignItems: 'center',
