@@ -325,6 +325,7 @@ class ContactComponent extends Component {
 
                         <View style={styles.footer}>
                             <FlatList
+                                style={{ paddingTop:10 }}
                                 data={this.state.data_contact}
                                 renderItem={this.renderItem}
                                 keyExtractor={(item) => item.id}
@@ -366,8 +367,8 @@ const styles = StyleSheet.create({
         height: 75,
         flexDirection: 'row',
 
-        borderBottomRightRadius: 40,
-        borderBottomLeftRadius: 40
+        borderBottomRightRadius: 20,
+        borderBottomLeftRadius: 20
 
         // backgroundColor: 'lightblue',
         // justifyContent: 'center',
@@ -378,6 +379,12 @@ const styles = StyleSheet.create({
 
         flex: 1,
         width: '100%',
+
+        borderWidth:1,
+
+        borderColor: '#f2f2f2',
+        borderTopLeftRadius:20,
+        borderTopRightRadius:20,
 
         // backgroundColor: 'green'
         // height: '75%',
@@ -415,8 +422,8 @@ const styles = StyleSheet.create({
     selection: {
 
         alignItems: 'center',
-        borderBottomWidth: 1,
-        borderBottomColor: '#f2f2f2',
+        // borderBottomWidth: 1,
+        // borderBottomColor: '#f2f2f2',
         width: '100%',
 
         // flexDirection:'row',

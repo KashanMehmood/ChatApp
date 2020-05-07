@@ -452,6 +452,7 @@ class MessagesComponent extends Component {
                         <View style={styles.footer}>
 
                             <FlatList
+                                style={{ paddingTop:10 }} 
                                 data={this.state.data_messages}
                                 renderItem={this.renderItem}
                                 keyExtractor={(item) => item.id}
@@ -531,6 +532,12 @@ const styles = StyleSheet.create({
         flex: 1,
         width: '100%',
 
+
+        borderWidth:1,
+
+        borderColor: '#f2f2f2',
+        borderTopLeftRadius:20,
+        borderTopRightRadius:20,
         // backgroundColor: 'green'
         // height: '75%',
     },
@@ -682,10 +689,10 @@ const styles = StyleSheet.create({
     selection: {
 
         alignItems: 'center',
-        borderBottomWidth: 1,
-        borderBottomColor: '#f2f2f2',
+        // borderBottomWidth: 1,
+        // borderBottomColor: '#f2f2f2',
         width: '100%',
-        marginBottom: 10,
+        // marginBottom: 10,
 
         // flexDirection:'row',
         // backgroundColor:'red'
