@@ -27,6 +27,7 @@ class ContactComponent extends Component {
         super(props);
         this.state = {
 
+            searchText: '',
             data_contact: [
                 {
                     id: 'Rc0LjZ54yj',
@@ -246,26 +247,79 @@ class ContactComponent extends Component {
                         <View style={styles.selection}>
                             <View style={styles.searchBar}>
 
-                                <Ionicons style={{
-                                    alignItems: 'flex-start'
-                                    // paddingLeft: 5,
-                                    // backgroundColor:'green',
-                                }} name="ios-search" color='gray' size={20} />
 
+                                <View style={{alignItems: 'flex-start'}}>
+
+                                    <TouchableOpacity style={{
+                                        height: 40,
+                                        width: 40,
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        // backgroundColor:'green',
+                                    }}
+                                        activeOpacity={0.5}
+                                        onPress={
+                                            () => {
+                                                // console.warn(this.state.searchText);
+                                                this.setState({ searchText: '' })
+                                            }
+                                        }
+                                    >
+                                        <Ionicons name="ios-search" color='gray' size={25} />
+                                    </TouchableOpacity>
+                                </View>
+
+
+                                {/* <View style={{alignItems: 'flex-start'}}>
+
+                                <Ionicons style={{
+                                    
+                                    height: 40,
+                                    width:40,
+
+                                    alignItems:'center',
+                                    justifyContent:'center',
+                                    
+                                    
+                                    backgroundColor:'green',
+                                }} name="ios-search" color='gray' size={20} />
+                                </View> */}
                                 <TextInput
                                     style={styles.searchTextInput}
+                                    // value={this.state.searchText}
+                                    // onChangeText={
+                                    //     (text) => {
+                                    //         // console.warn(text);
+                                    //         this.setState({ searchText: text })
+                                    //     }
+                                    // }
                                     placeholder="Search"
                                 />
 
-                                <TouchableOpacity style={{
-                                    paddingLeft: 5,
-                                    alignItems: 'flex-end'
-                                    // paddingRight: 7,
-                                    // backgroundColor:'green',
-                                }} activeOpacity={0.5}>
+                                <View style={{ alignItems: 'flex-end' }}>
 
-                                    <Ionicons name="ios-close" color='gray' size={25} />
-                                </TouchableOpacity>
+                                    <TouchableOpacity style={{
+                                        height: 40,
+                                        width: 40,
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+
+                                        // borderLeftWidth: 0.4,
+                                        // borderLeftColor: '#d3d3d3',
+
+                                        // backgroundColor:'green',
+                                    }}
+                                        activeOpacity={0.5}
+                                        onPress={
+                                            () => {
+                                                // console.warn(this.state.searchText);
+                                                this.setState({ searchText: '' })
+                                            }
+                                        }
+                                    >
+                                        <Ionicons name="ios-close" color='gray' size={25} />
+                                    </TouchableOpacity>
+                                </View>
                             </View>
                         </View>
 
@@ -380,8 +434,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#f2f2f2',
         borderRadius: 5,
         alignItems: 'center',
-        paddingLeft: 15,
-        paddingRight: 20
+        // paddingLeft: 15,
+        // paddingRight: 20
 
         // paddingHorizontal: 17
         // backgroundColor:'green',
@@ -391,7 +445,7 @@ const styles = StyleSheet.create({
 
         flex: 1,
         alignItems: 'center',
-        paddingLeft: 10,
+        // paddingLeft: 10,
 
         // width: '95%',
         // paddingRight: 20,
