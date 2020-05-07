@@ -64,8 +64,17 @@ const Tabnavigator = createMaterialBottomTabNavigator({
     initialRouteName: 'Messages',
     activeColor: 'green',
     inactiveColor: 'gray',
-    barStyle: { backgroundColor: 'white' },
-    // shifting: true
+    
+    barStyle: {
+        
+        backgroundColor: 'white',
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        borderColor: 'transparent',
+        overflow: 'hidden',
+        position: 'absolute',
+    },
+    shifting: true
 });
 
 
